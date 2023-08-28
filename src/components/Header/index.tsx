@@ -36,7 +36,6 @@ const index = () => {
           sx={{
             ...flexBetween,
             alignItems: "center",
-            justifyContent: "center",
             px: 2
           }}
         >
@@ -50,7 +49,8 @@ const index = () => {
             <ProfileSettings />
           </Box>
           <Box sx={{ 
-            display: { xs: 'flex', md: 'none' }
+            display: { xs: 'flex', md: 'none' },
+            mx: "auto"
            }}>
             <MobileSearch />
           </Box>
