@@ -2,8 +2,7 @@ import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { AiFillStar } from 'react-icons/ai';
+import { AiFillStar, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import { FaRegHeart } from 'react-icons/fa';
 import {
   flexBetween,
@@ -92,7 +91,11 @@ const CarouselCard = ({ location }: { location: CardsDBType }) => {
         width: "90%",
         bottom: 'calc(55%)',
         left: "5%",
-        display: hoveredItem === location.id? "flex" : "none",
+        display: {
+          xs: "flex",
+          md: "none",
+        },
+        ...(hoveredItem === location.id && { display: "flex" }),
         justifyContent: "space-between"
       }}>
         <Box sx={{
@@ -106,7 +109,7 @@ const CarouselCard = ({ location }: { location: CardsDBType }) => {
             color: "#000"
           }
         }}onClick={prevImg}>
-          <FaArrowLeft size={22}/>
+          <AiOutlineLeft size={25}/>
         </Box>
         <Box sx={{
           display: "flex",
@@ -119,7 +122,7 @@ const CarouselCard = ({ location }: { location: CardsDBType }) => {
             color: "#000"
           }
         }}onClick={nextImg}>
-          <FaArrowRight size={22} />
+          <AiOutlineRight size={25} />
         </Box>
       </Box>
       <Box sx={flexBetween}>
